@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: rgba(83, 83, 85, 0.651);
+            text-align: center;
+        }
+    </style>
+
+    <title>Òtica</title>
+    <h1>Òtica</h1>
+</head>
+<h1>Informe abaixo sua receita oftálmica:</h1>
+<body>
+
+    <h3>Grau esférico do olho Esquerdo: <input type="number" name="GEE" id="GEE" min="-15" max="0"></h3>  
+    
+    <h3>Grau esférico do olho Direito: <input type="number" name="GED" id="GED" min="-15" max="0"></h3>
+    <p></p>
+    <h3>Grau cilíndrico do olho esquerdo
+    <input type="number" name="GCE" id="GCE" min="-6" max="0" step="0.25"></h3>  
+
+    <h3>Grau cilíndrico do olho direito
+    <input type="number" name="GCD" id="GCD" min="-6" max="0" step="0.25"> </h3>  
+
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div id="res">
+
+    </div>
+    
+    <script>
+       function calcular() {
+            var res = window.document.querySelector(`input#txGEE`)
+            var res = window.document.querySelector(`input#txGED`)
+            var res = window.document.querySelector(`input#txGCE`)
+            var res = window.document.querySelector(`input#txGCD`)
+
+            var res = window.document.querySelector(`div#res`)
+
+            res.innerHTML = `seu resultado ${res}`
+  
+           if (GEE.value <=-12 || GEE.value <=-15 || GEE.value >=-2){
+              res.innerHTML = 'Lente Vision 2'
+           }
+              else if (GEE.value >=-3 || GEE.value >=-12 ){
+              res.innerHTML = 'Lente Prime 1'
+              }
+              if (GED.value <=-12 || GED.value <=-15 || GED.value >=-2){
+              res.innerHTML = 'Lente Vision 2'
+           }
+              else if (GED.value >=-3 || GED.value >=-12 ){
+              res.innerHTML = 'Lente Prime 1'
+              }
+           
+              if (GCE.value <=-2.25 || GCE.value <=-5){
+                res.innerHTML = 'Lente Vision 4'
+              }
+              else if (GCD.value >=-2 || GCD.value >=-2)
+                res.innerHTML = 'Lente Prime 3'
+
+                else 
+                res.innerHTML = 'Informe sua Receita"'        
+       }
+
+    </script>
+   
+</body>
+</html>
